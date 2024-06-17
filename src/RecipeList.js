@@ -5,7 +5,6 @@ function RecipeList(props) {
   // TODO: Display the list of recipes using the structure of table that is provided.
   // TODO: Create at least one additional component that is used by this component.
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked.
-  console.log(data)
   const deleteHandler = (value) => {
     handler(data.filter((item) => item.id !== value))
   }
@@ -27,9 +26,9 @@ function RecipeList(props) {
           <tr key={idx}>
             <td>{item.name}</td>
             <td>{item.cuisine}</td>
-            <td><img src={item.photo} style={{ width: '100px' }}/></td>
-            <td>{item.ingredients}</td>
-            <td>{item.preparation}</td>
+            <td><img src={item.photo} /></td>
+              <td className="content_td"><p>{item.ingredients}</p></td>
+              <td className="content_td"><p>{item.preparation}</p></td>
             <td><button name='delete' onClick={() => deleteHandler(item.id)}>Delete</button></td>
           </tr>
           ))}

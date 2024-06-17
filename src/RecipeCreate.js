@@ -30,14 +30,6 @@ function RecipeCreate({ handler }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     incrementCount();
-//     console.log(
-//       formData.id,
-//       formData.name,
-//       formData.cuisine,
-//       formData.photo,
-//       formData.ingredients,
-//       formData.preparation
-//     );
     handler(formData)
     setFormData(initialFormState); // Reset the form after submission
   };
@@ -55,6 +47,7 @@ function RecipeCreate({ handler }) {
           placeholder="Name"
           onChange={handleChange}
           value={formData.name}
+          require
         />
         </td>
         <td>
